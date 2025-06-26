@@ -1,3 +1,4 @@
+# MainLogic.py
 import os
 import cv2
 import traceback
@@ -82,9 +83,9 @@ class LogicMixin:
                     if frame is not None:
                         self.file_path = file
                         self.filePath = None
-                        self.display_image(frame)
                         self.statusbar.showMessage(f"已加载图片: {os.path.basename(file)}")
                         self.detectBtn_5.setEnabled(True)
+                        self.display_image(frame)
                     else:
                         QMessageBox.critical(None, "错误", "无法读取图片文件！")
 
@@ -117,6 +118,7 @@ class LogicMixin:
 
     def display_image(self, cv_img):
         try:
+            self.last_frame = cv_img.copy()
             rgb_image = cv2.cvtColor(cv_img, cv2.COLOR_BGR2RGB)
             h, w, ch = rgb_image.shape
             bytes_per_line = ch * w
@@ -166,8 +168,9 @@ class LogicMixin:
                     return
                 results = self.model(self.file_path, conf=conf_threshold, iou=iou_threshold)[0]
                 result_img = results.plot()
-                self.display_image(result_img)
                 self.statusbar.showMessage("图片检测完成")
+                self.display_image(result_img)
+
 
             elif input_type == "视频":
                 if not self.filePath:
