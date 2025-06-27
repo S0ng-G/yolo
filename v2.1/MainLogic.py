@@ -150,6 +150,10 @@ class LogicMixin:
 
                 self.stop_flag = False
                 while not self.stop_flag:
+                    conf_threshold = self.confSpin_5.value()
+                    iou_threshold = self.loUSpinBox_5.value()
+                    delay_time = self.delaySpinBox_5.value()
+
                     ret, frame = self.cap.read()
                     if not ret:
                         break
@@ -183,6 +187,10 @@ class LogicMixin:
 
                 self.statusbar.showMessage("开始处理视频...")
                 while True:
+                    conf_threshold = self.confSpin_5.value()
+                    iou_threshold = self.loUSpinBox_5.value()
+                    delay_time = self.delaySpinBox_5.value()
+
                     ret, frame = cap.read()
                     if not ret:
                         break
