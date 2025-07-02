@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>270</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>YOLO 主控制台</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QPushButton" name="detectButton">
+         <property name="cursor">
+          <cursorShape>OpenHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: #FFB74D;
+	height:20px;
+	padding:3px;
+	border-radius:5px;
+	font: 75 12pt &quot;Agency FB&quot;;
+	color:black;
+}
+QPushButton:hover{
+	background-color: #FF9800;
+}
+QPushButton:pressed{
+	background-color: #F57C00;
+}</string>
+         </property>
+         <property name="text">
+          <string>进入目标检测模块</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="trainButton">
+         <property name="cursor">
+          <cursorShape>OpenHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgb(85, 170, 255);
+	height:20px;
+	padding:3px;
+	border-radius:5px;
+	font: 75 12pt &quot;Agency FB&quot;;
+	color:black;
+}
+QPushButton:hover{
+	background-color: rgb(0, 170, 255);
+}
+QPushButton:pressed{
+	background-color: rgb(0, 85, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>进入模型训练模块</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget_2" native="true">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit{
+	height:20px;
+	font: 12pt &quot;Agency FB&quot;;
+	background-color: rgb(255, 255, 255);
+	border:1px solid black;
+}</string>
+         </property>
+         <property name="text">
+          <string>在此检索历史记录……</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignTop">
+        <widget class="QWidget" name="historyContainer" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
